@@ -75,10 +75,139 @@ chat y comentarios, fotos en el chat, publicación en App Store y Google Play.
 **Fase 3 · Crecimiento.** Eventos y registro, Zona VIP, capacitaciones, pagos de membresía,
 analítica de uso.
 
+## Costos de operación
+
+Precios en dólares, sin impuestos, consultados el 15 de octubre de 2026. Pueden cambiar.
+
+### Agente de noticias (API de Claude)
+
+El agente usa **Claude Opus 5.5** (`claude-opus-5-5`), que cobra USD 4 por millón de tokens de
+entrada y USD 20 por millón de tokens de salida. Un token equivale más o menos a tres cuartos de
+una palabra en español.
+
+| Pieza | Tokens de entrada | Tokens de salida (texto + razonamiento) | Costo por artículo |
+|---|---|---|---|
+| Noticia del día (~400 palabras) | ~2.000 | ~4.000 | ~USD 0,09 |
+| Resumen semanal (~700 palabras) | ~3.000 | ~6.000 | ~USD 0,13 |
+
+- **Uso previsto** (30 noticias diarias + 4 resúmenes semanales): **unos USD 3 a 5 al mes**.
+- **Si el agente además busca noticias del sector en internet** antes de escribir, el contexto de
+  cada artículo crece y el costo sube a **unos USD 8 a 10 al mes**.
+- Son estimaciones a partir del tamaño de los textos, no mediciones. El consumo real se ve en la
+  consola de Anthropic desde el primer día, y se puede fijar un tope de gasto mensual allí.
+- Si algún día hace falta bajar el costo, Claude Sonnet 5.5 cuesta la mitad. Con este volumen no
+  vale la pena: la diferencia es de un par de dólares al mes.
+
+### Servicios
+
+| Servicio | Piloto | Lanzamiento | Notas |
+|---|---|---|---|
+| Supabase | USD 0 | USD 25/mes (Pro) | El plan gratuito pausa el proyecto tras una semana sin actividad; para producción conviene Pro (100.000 usuarios activos, 8 GB de base de datos, 100 GB de archivos). |
+| API de Claude | ~USD 5/mes | ~USD 5 a 10/mes | Ver la tabla anterior. |
+| Expo EAS (compilación y envío a tiendas) | USD 0 | USD 0 a 19/mes | El plan gratuito incluye 15 compilaciones de iOS y 15 de Android al mes, suficiente para este ritmo. Starter (USD 19) da más velocidad y actualizaciones para 3.000 usuarios. |
+| Notificaciones push (Expo) | USD 0 | USD 0 | Incluidas. |
+| Apple Developer Program | USD 99/año | USD 99/año | Obligatorio para publicar en App Store. |
+| Google Play Console | USD 25 una vez | — | Pago único. |
+
+**Total del primer año en producción:** unos **USD 485** (Supabase Pro 300, Claude 60, Apple 99,
+Google 25), o unos USD 715 si se suma EAS Starter.
+
+## Publicación en las tiendas
+
+### Lo que necesitan ambas tiendas
+
+- **Cuentas a nombre de Conéctate.** Para que la tienda muestre "Conéctate" como vendedor, y no
+  el nombre de una persona, las cuentas deben ser de organización. Eso exige una empresa
+  registrada y un número **D-U-N-S** (gratuito, se tramita en dnb.com y puede tardar una o dos
+  semanas). Conviene pedirlo ya.
+- **No hace falta una Mac.** EAS compila la app de iOS en la nube y la envía a App Store Connect.
+- **Política de privacidad pública**, por ejemplo en conectatepro.com/privacidad, que explique qué
+  datos se guardan (perfil, mensajes, respuestas de formularios) y para qué.
+- **Borrar la cuenta desde la app.** Ambas tiendas lo exigen a toda app con registro. Google
+  pide además un enlace web para solicitarlo.
+- **Moderación del contenido de los miembros.** Como hay chat y comentarios, la app debe permitir
+  reportar contenido, bloquear usuarios y retirar lo reportado. Google pide lo mismo para el
+  contenido generado con IA.
+- **Material de la ficha:** ícono de 1024 × 1024, capturas de pantalla, descripción corta y larga,
+  categoría (Redes sociales o Negocios) y correo de soporte (conectate3g@gmail.com).
+- **Notificaciones push:** una clave de Apple (APNs) y un proyecto de Firebase para Android. EAS
+  las gestiona.
+
+### Apple App Store
+
+- Cuota de USD 99 al año.
+- Cuestionario de privacidad ("etiquetas de privacidad") en App Store Connect.
+- Como el acceso requiere aprobación, hay que darle a Apple una **cuenta de demostración** ya
+  aprobada para que el revisor pueda entrar.
+- Si en el futuro se ofrece entrar con Google o Facebook, Apple exige también "Iniciar sesión con
+  Apple". Con correo o teléfono, como está planeado, no aplica.
+- Pruebas con hasta 10.000 personas por TestFlight. La revisión suele tardar uno o dos días.
+- Hoy la app declara soporte para iPad, lo que obliga a subir capturas de iPad. Para el MVP
+  conviene desactivarlo y publicar solo para iPhone.
+
+### Google Play
+
+- Pago único de USD 25 y verificación de identidad.
+- Formulario de **seguridad de los datos** y cuestionario de clasificación de contenido.
+- **Cuentas personales nuevas:** antes de publicar, Google exige una prueba cerrada con al menos
+  12 personas durante 14 días seguidos. Las cuentas de organización no tienen ese requisito, otra
+  razón para abrirla a nombre de Conéctate.
+- Google exige compilar para una versión reciente de Android. Expo la mantiene al día con cada
+  actualización del SDK, lo que entra en el soporte mensual.
+
+## Cotización
+
+Precios con una **tarifa supuesta de USD 30 por hora**, a ajustar según quién haga el trabajo.
+Las horas son estimaciones para la Fase 1 (MVP) y la publicación. No incluyen los costos de
+servicios de la sección anterior, que se pagan directamente a cada proveedor.
+
+### Desarrollo del MVP
+
+| # | Tarea | Horas | Precio (USD) |
+|---|---|---|---|
+| 1 | Diseño de pantallas e identidad aplicada (colores, ícono, pantalla de inicio) | 24 | 720 |
+| 2 | Configuración de Supabase, entornos de prueba y producción | 8 | 240 |
+| 3 | Registro, inicio de sesión, perfil y aprobación de miembros | 24 | 720 |
+| 4 | Directorio con búsqueda, filtros, foto de perfil y botón de WhatsApp | 20 | 600 |
+| 5 | Chat 1:1 y grupos en tiempo real, con leído/no leído | 40 | 1.200 |
+| 6 | Notificaciones push | 12 | 360 |
+| 7 | Home de noticias con comentarios | 16 | 480 |
+| 8 | Agente de noticias: programación diaria/semanal y flujo de revisión del editor | 16 | 480 |
+| 9 | Formularios y pantalla de estadísticas | 20 | 600 |
+| 10 | Moderación y borrado de cuenta (requisitos de las tiendas) | 16 | 480 |
+| 11 | Pantallas de administración: aprobar miembros, publicar noticias, crear formularios | 16 | 480 |
+| 12 | Pruebas en iPhone y Android y corrección de errores | 24 | 720 |
+| 13 | Coordinación, reuniones y entregas | 16 | 480 |
+| | **Subtotal desarrollo** | **252** | **7.560** |
+
+### Instalación y publicación
+
+| # | Tarea | Horas | Precio (USD) |
+|---|---|---|---|
+| 14 | Acompañamiento para abrir las cuentas de Apple y Google (incluido D-U-N-S) | 4 | 120 |
+| 15 | Configuración de EAS, certificados, claves de notificaciones y producción en Supabase | 8 | 240 |
+| 16 | Fichas de tienda: textos, capturas, política de privacidad y cuestionarios | 10 | 300 |
+| 17 | Piloto en TestFlight y prueba cerrada de Google Play, envío a revisión y atención de rechazos | 10 | 300 |
+| | **Subtotal instalación** | **32** | **960** |
+
+**Total del proyecto: 284 horas, USD 8.520.** Conviene reservar un 15 % adicional (unos USD
+1.300) para cambios que salgan del piloto.
+
+### Soporte mensual
+
+| Plan | Incluye | Horas al mes | Precio mensual (USD) |
+|---|---|---|---|
+| Básico | Corrección de errores, monitoreo, actualizaciones de Expo y de requisitos de las tiendas | 8 | 240 |
+| Estándar | Lo anterior, más ajustes del agente de noticias y mejoras pequeñas | 16 | 480 |
+
+Las horas que excedan el plan se facturan a la tarifa por hora. Las funciones nuevas de las
+Fases 2 y 3 se cotizan aparte.
+
 ## Decisiones pendientes
 
 - Quién aprueba miembros y quién edita noticias.
 - Si el registro es abierto con aprobación o solo por invitación.
 - Logo, colores y tipografía oficiales (hoy hay una paleta provisional).
-- Cuentas de Apple Developer (USD 99 al año) y Google Play (USD 25 una vez) a nombre de Conéctate.
+- Si Conéctate tiene empresa registrada para abrir las cuentas de tienda como organización.
+- La tarifa por hora definitiva para la cotización.
 - Fuentes de información para el agente (eventos, nuevos miembros, noticias del sector).
