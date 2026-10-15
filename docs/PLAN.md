@@ -23,10 +23,11 @@ mejor.
 | **Home de noticias** | Noticia del día y resumen semanal en formato blog, con comentarios de los miembros. | Sí |
 | **Agente de contenido** | Redacta los borradores de las noticias con IA a partir de las novedades de la comunidad. Un editor revisa y publica. | Sí, con revisión humana obligatoria |
 | **Formularios y estadísticas** | Encuestas para recopilar datos de los miembros (ciudad, antigüedad del negocio, intereses de capacitación) y tablero con resultados agregados. | Un formulario de alta y estadísticas básicas |
-| **Administración** | Aprobar miembros, asignar editores, publicar noticias, crear formularios. | Desde el panel de Supabase al inicio |
+| **Acceso por suscripción** | Cualquiera descarga la app gratis y se registra, pero solo entra quien tenga la suscripción activa, que se paga en el portal de Conéctate. La app consulta ese estado y no vende nada. | Sí |
+| **Administración** | Angélica, como administradora, aprueba miembros, publica noticias y crea formularios. Puede dar rol de editor a otras personas. | Sí, con pantallas dentro de la app |
 
 Fuera del MVP, para fases siguientes: eventos con registro, Zona VIP con contenido premium,
-capacitaciones en video, pagos de membresía, Revista Conecta y CA News dentro de la app.
+capacitaciones en video, Revista Conecta y CA News dentro de la app.
 
 ## Stack recomendado
 
@@ -61,19 +62,20 @@ navegables con datos de ejemplo, esquema de base de datos con permisos y la func
 
 **Fase 1 · MVP piloto.**
 1. Crear el proyecto en Supabase, aplicar la migración y conectar la app.
-2. Registro e inicio de sesión; alta de perfil y aprobación por un admin.
+2. Registro abierto e inicio de sesión condicionado a la suscripción activa en el portal; alta de
+   perfil y aprobación por Angélica.
 3. Directorio real con búsqueda y filtros; botón para abrir WhatsApp del miembro.
 4. Chat 1:1 y grupo general de la comunidad en tiempo real, con notificaciones push.
 5. Home con noticias publicadas y comentarios.
-6. Agente de noticias: borrador diario y semanal automático; publicación por un editor.
+6. Agente de noticias: borrador diario y semanal automático a partir de eventos, miembros nuevos,
+   noticias del sector y temas que proponga Angélica; ella revisa y publica.
 7. Formulario de alta y pantalla de estadísticas.
 8. Piloto con 20 a 30 miembros vía TestFlight y prueba interna de Google Play.
 
-**Fase 2 · Lanzamiento.** Ajustes del piloto, identidad visual oficial, moderación y reportes en
+**Fase 2 · Lanzamiento.** Ajustes del piloto, moderación y reportes en
 chat y comentarios, fotos en el chat, publicación en App Store y Google Play.
 
-**Fase 3 · Crecimiento.** Eventos y registro, Zona VIP, capacitaciones, pagos de membresía,
-analítica de uso.
+**Fase 3 · Crecimiento.** Eventos y registro, Zona VIP, capacitaciones, analítica de uso.
 
 ## Costos de operación
 
@@ -116,9 +118,9 @@ Google 25), o unos USD 715 si se suma EAS Starter.
 
 ### Lo que necesitan ambas tiendas
 
-- **Cuentas a nombre de Conéctate.** Para que la tienda muestre "Conéctate" como vendedor, y no
-  el nombre de una persona, las cuentas deben ser de organización. Eso exige una empresa
-  registrada y un número **D-U-N-S** (gratuito, se tramita en dnb.com y puede tardar una o dos
+- **Cuentas a nombre de Conéctate.** Conéctate ya tiene empresa registrada, así que las cuentas
+  se abren como organización y la tienda muestra "Conéctate" como vendedor. Falta el número
+  **D-U-N-S** de la empresa (gratuito, se consulta o tramita en dnb.com y puede tardar una o dos
   semanas). Conviene pedirlo ya.
 - **No hace falta una Mac.** EAS compila la app de iOS en la nube y la envía a App Store Connect.
 - **Política de privacidad pública**, por ejemplo en conectatepro.com/privacidad, que explique qué
@@ -130,6 +132,11 @@ Google 25), o unos USD 715 si se suma EAS Starter.
   contenido generado con IA.
 - **Material de la ficha:** ícono de 1024 × 1024, capturas de pantalla, descripción corta y larga,
   categoría (Redes sociales o Negocios) y correo de soporte (conectate3g@gmail.com).
+- **Suscripción pagada fuera de la app.** Como el pago se hace en el portal web, la app solo
+  debe permitir iniciar sesión. No puede mostrar precios, botones de pago ni enlaces para
+  suscribirse, porque entonces Apple y Google exigirían cobrar con su propio sistema de pagos y
+  quedarse con una comisión. Es el modelo habitual de las apps de membresía, pero conviene
+  confirmarlo con las reglas vigentes de cada tienda al preparar la ficha.
 - **Notificaciones push:** una clave de Apple (APNs) y un proyecto de Firebase para Android. EAS
   las gestiona.
 
@@ -157,8 +164,9 @@ Google 25), o unos USD 715 si se suma EAS Starter.
 
 ## Cotización
 
-Precios con una **tarifa supuesta de USD 30 por hora**, a ajustar según quién haga el trabajo.
-Las horas son estimaciones para la Fase 1 (MVP) y la publicación. No incluyen los costos de
+**Tarifa:** USD 50 por hora de lista, con un **descuento del 40 %** a cambio de una
+**participación del 10 % en los ingresos por suscripciones** de la app. La tarifa efectiva es
+de **USD 30 por hora**, y es la que se usa en todas las tablas. Las horas son estimaciones para la Fase 1 (MVP) y la publicación. No incluyen los costos de
 servicios de la sección anterior, que se pagan directamente a cada proveedor.
 
 ### Desarrollo del MVP
@@ -172,13 +180,14 @@ servicios de la sección anterior, que se pagan directamente a cada proveedor.
 | 5 | Chat 1:1 y grupos en tiempo real, con leído/no leído | 40 | 1.200 |
 | 6 | Notificaciones push | 12 | 360 |
 | 7 | Home de noticias con comentarios | 16 | 480 |
-| 8 | Agente de noticias: programación diaria/semanal y flujo de revisión del editor | 16 | 480 |
+| 8 | Agente de noticias: programación diaria/semanal, temas propuestos por Angélica y revisión antes de publicar | 18 | 540 |
 | 9 | Formularios y pantalla de estadísticas | 20 | 600 |
 | 10 | Moderación y borrado de cuenta (requisitos de las tiendas) | 16 | 480 |
 | 11 | Pantallas de administración: aprobar miembros, publicar noticias, crear formularios | 16 | 480 |
 | 12 | Pruebas en iPhone y Android y corrección de errores | 24 | 720 |
 | 13 | Coordinación, reuniones y entregas | 16 | 480 |
-| | **Subtotal desarrollo** | **252** | **7.560** |
+| 14 | Acceso por suscripción: verificación con el portal de Conéctate | 16 | 480 |
+| | **Subtotal desarrollo** | **270** | **8.100** |
 
 El detalle de cada tarea está en el [anexo de horas](#anexo-detalle-de-las-horas-de-desarrollo).
 
@@ -186,14 +195,15 @@ El detalle de cada tarea está en el [anexo de horas](#anexo-detalle-de-las-hora
 
 | # | Tarea | Horas | Precio (USD) |
 |---|---|---|---|
-| 14 | Acompañamiento para abrir las cuentas de Apple y Google (incluido D-U-N-S) | 4 | 120 |
-| 15 | Configuración de EAS, certificados, claves de notificaciones y producción en Supabase | 8 | 240 |
-| 16 | Fichas de tienda: textos, capturas, política de privacidad y cuestionarios | 10 | 300 |
-| 17 | Piloto en TestFlight y prueba cerrada de Google Play, envío a revisión y atención de rechazos | 10 | 300 |
+| 15 | Acompañamiento para abrir las cuentas de Apple y Google (incluido D-U-N-S) | 4 | 120 |
+| 16 | Configuración de EAS, certificados, claves de notificaciones y producción en Supabase | 8 | 240 |
+| 17 | Fichas de tienda: textos, capturas, política de privacidad y cuestionarios | 10 | 300 |
+| 18 | Piloto en TestFlight y prueba cerrada de Google Play, envío a revisión y atención de rechazos | 10 | 300 |
 | | **Subtotal instalación** | **32** | **960** |
 
-**Total del proyecto: 284 horas, USD 8.520.** Conviene reservar un 15 % adicional (unos USD
-1.300) para cambios que salgan del piloto.
+**Total del proyecto: 302 horas, USD 9.060** (USD 15.100 a tarifa de lista, menos USD 6.040 de
+descuento). Conviene reservar un 15 % adicional (unos USD 1.360) para cambios que salgan del
+piloto.
 
 ### Soporte mensual
 
@@ -202,21 +212,23 @@ El detalle de cada tarea está en el [anexo de horas](#anexo-detalle-de-las-hora
 | Básico | Corrección de errores, monitoreo, actualizaciones de Expo y de requisitos de las tiendas | 8 | 240 |
 | Estándar | Lo anterior, más ajustes del agente de noticias y mejoras pequeñas | 16 | 480 |
 
-Las horas que excedan el plan se facturan a la tarifa por hora. Las funciones nuevas de las
+Las horas que excedan el plan se facturan a la tarifa efectiva de USD 30, mientras se mantenga la
+participación en las suscripciones. Las funciones nuevas de las
 Fases 2 y 3 se cotizan aparte.
 
 ### Resumen de precios
 
 El margen del 25 % se aplica solo a los costos de plataforma, que Conéctate pagaría a través del
-proveedor del servicio. Las horas de trabajo van a la tarifa fija de USD 30.
+proveedor del servicio. Las horas de trabajo van a la tarifa efectiva de USD 30. A esto se suma
+el 10 % de los ingresos por suscripciones, que se liquida aparte.
 
 | Concepto | Costo base (USD) | Margen 25 % (USD) | Precio sugerido (USD) |
 |---|---|---|---|
 | **Pago inicial** | | | |
-| Desarrollo del MVP (252 h × 30) | 7.560 | — | 7.560 |
+| Desarrollo del MVP (270 h × 30) | 8.100 | — | 8.100 |
 | Instalación y publicación (32 h × 30) | 960 | — | 960 |
 | Plataformas: Apple Developer, primer año (99) + Google Play (25) | 124 | 31 | 155 |
-| **Total pago inicial** | **8.644** | **31** | **8.675** |
+| **Total pago inicial** | **9.184** | **31** | **9.215** |
 | **Mensualidad** | | | |
 | Plataformas: Supabase Pro (25) + API de Claude (~10) | 35 | 8,75 | 43,75 |
 | Horas de servicio sugeridas (plan Básico, 8 h × 30) | 240 | — | 240 |
@@ -231,14 +243,29 @@ proveedor del servicio. Las horas de trabajo van a la tarifa fija de USD 30.
   (19 más margen).
 - No incluye la reserva del 15 % para cambios que salgan del piloto.
 
-## Decisiones pendientes
+## Decisiones tomadas
 
-- Quién aprueba miembros y quién edita noticias.
-- Si el registro es abierto con aprobación o solo por invitación.
-- Logo, colores y tipografía oficiales (hoy hay una paleta provisional).
-- Si Conéctate tiene empresa registrada para abrir las cuentas de tienda como organización.
-- La tarifa por hora definitiva para la cotización.
-- Fuentes de información para el agente (eventos, nuevos miembros, noticias del sector).
+Definidas por Cristian el 15 de octubre de 2026.
+
+- **Administración:** Angélica es la administradora. Aprueba miembros y edita y publica las
+  noticias.
+- **Acceso:** el registro es abierto y la app es gratuita en las tiendas, pero para entrar hace
+  falta una suscripción activa, que se paga en el portal de Conéctate.
+- **Identidad visual:** logo, colores y tipografía se definen en la etapa de diseño, en línea con
+  el portal web. La paleta actual de la app es provisional.
+- **Cuentas de tienda:** Conéctate tiene empresa registrada, pero aún no tiene cuentas en las
+  tiendas. Se abrirán como organización.
+- **Tarifa:** USD 50 por hora con un 40 % de descuento (USD 30 efectivos), a cambio del 10 % de
+  los ingresos por suscripciones.
+- **Fuentes del agente:** eventos, miembros nuevos, noticias del sector y temas que proponga
+  Angélica.
+
+## Por definir
+
+- Con qué sistema cobra hoy el portal las suscripciones. De eso depende cómo la app verifica
+  que una suscripción está activa (tarea 14).
+- Los términos de la participación del 10 %: desde cuándo corre, si es sobre ingresos brutos o
+  netos y por cuánto tiempo.
 
 
 ## Anexo: detalle de las horas de desarrollo
@@ -248,7 +275,7 @@ puede estimar con confianza. Las horas corresponden a un desarrollador con exper
 Native y Supabase, e incluyen escribir el código, probarlo y ajustarlo tras la revisión. Las
 pantallas de la Fase 0 ya existen con datos de ejemplo, por eso las subtareas hablan de
 "conectar" y no de construir desde cero. Con dedicación completa (40 horas por semana) son unas
-6 a 7 semanas de trabajo.
+7 semanas de trabajo.
 
 ### 1. Diseño de pantallas e identidad aplicada · 24 h
 
@@ -322,15 +349,16 @@ pantallas de la Fase 0 ya existen con datos de ejemplo, por eso las subtareas ha
 | Botón para compartir una noticia fuera de la app | 2 |
 | Actualizar al deslizar hacia abajo y estados vacíos | 1 |
 
-### 8. Agente de noticias · 16 h
+### 8. Agente de noticias · 18 h
 
 | Subtarea | Horas |
 |---|---|
 | Ajustar las instrucciones y el tono con ejemplos reales de Conéctate | 4 |
-| Darle contexto: eventos, miembros nuevos y novedades de la semana | 4 |
+| Darle contexto: eventos, miembros nuevos y noticias del sector | 4 |
+| Espacio para que Angélica proponga temas y fuentes al agente | 2 |
 | Programarlo a diario y cada semana | 2 |
 | Manejo de errores y aviso al equipo si falla | 2 |
-| Revisión del editor: leer el borrador, corregirlo y publicarlo | 4 |
+| Revisión de Angélica: leer el borrador, corregirlo y publicarlo | 4 |
 
 ### 9. Formularios y estadísticas · 20 h
 
@@ -375,3 +403,13 @@ pantallas de la Fase 0 ya existen con datos de ejemplo, por eso las subtareas ha
 | Reunión de arranque y definición de detalles | 3 |
 | Demostraciones semanales de avance (6 semanas) | 9 |
 | Documentación y entrega final | 4 |
+
+### 14. Acceso por suscripción · 16 h
+
+| Subtarea | Horas |
+|---|---|
+| Revisar cómo cobra hoy el portal y acordar cómo avisa a la app (aviso automático o consulta) | 3 |
+| Función que recibe ese aviso y activa o vence la suscripción de cada miembro | 5 |
+| Bloquear el acceso sin suscripción activa, con una pantalla que no muestre precios ni enlaces de pago | 3 |
+| Pruebas de alta, renovación, vencimiento y cancelación | 3 |
+| Revisión de las reglas de pagos de Apple y Google antes de enviar a revisión | 2 |
