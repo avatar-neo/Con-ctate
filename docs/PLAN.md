@@ -205,6 +205,32 @@ El detalle de cada tarea está en el [anexo de horas](#anexo-detalle-de-las-hora
 Las horas que excedan el plan se facturan a la tarifa por hora. Las funciones nuevas de las
 Fases 2 y 3 se cotizan aparte.
 
+### Resumen de precios
+
+El margen del 25 % se aplica solo a los costos de plataforma, que Conéctate pagaría a través del
+proveedor del servicio. Las horas de trabajo van a la tarifa fija de USD 30.
+
+| Concepto | Costo base (USD) | Margen 25 % (USD) | Precio sugerido (USD) |
+|---|---|---|---|
+| **Pago inicial** | | | |
+| Desarrollo del MVP (252 h × 30) | 7.560 | — | 7.560 |
+| Instalación y publicación (32 h × 30) | 960 | — | 960 |
+| Plataformas: Apple Developer, primer año (99) + Google Play (25) | 124 | 31 | 155 |
+| **Total pago inicial** | **8.644** | **31** | **8.675** |
+| **Mensualidad** | | | |
+| Plataformas: Supabase Pro (25) + API de Claude (~10) | 35 | 8,75 | 43,75 |
+| Horas de servicio sugeridas (plan Básico, 8 h × 30) | 240 | — | 240 |
+| **Total mensual** | **275** | **8,75** | **283,75** |
+
+- La API de Claude se calculó con el escenario alto (USD 10 al mes). Si el consumo real es menor,
+  la diferencia queda a favor de Conéctate o se ajusta la mensualidad.
+- La renovación de Apple (USD 99 más margen, USD 123,75) se cobra una vez al año a partir del
+  segundo año. Google Play no tiene renovación.
+- Con el plan Estándar (16 h) la mensualidad sería de USD 523,75.
+- Expo EAS se mantiene en el plan gratuito. Si se pasa a Starter, la mensualidad sube USD 23,75
+  (19 más margen).
+- No incluye la reserva del 15 % para cambios que salgan del piloto.
+
 ## Decisiones pendientes
 
 - Quién aprueba miembros y quién edita noticias.
