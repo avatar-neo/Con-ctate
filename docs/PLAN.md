@@ -180,6 +180,8 @@ servicios de la sección anterior, que se pagan directamente a cada proveedor.
 | 13 | Coordinación, reuniones y entregas | 16 | 480 |
 | | **Subtotal desarrollo** | **252** | **7.560** |
 
+El detalle de cada tarea está en el [anexo de horas](#anexo-detalle-de-las-horas-de-desarrollo).
+
 ### Instalación y publicación
 
 | # | Tarea | Horas | Precio (USD) |
@@ -211,3 +213,139 @@ Fases 2 y 3 se cotizan aparte.
 - Si Conéctate tiene empresa registrada para abrir las cuentas de tienda como organización.
 - La tarifa por hora definitiva para la cotización.
 - Fuentes de información para el agente (eventos, nuevos miembros, noticias del sector).
+
+
+## Anexo: detalle de las horas de desarrollo
+
+**Cómo se calculó.** Cada tarea se dividió en subtareas de 1 a 9 horas, el tamaño que una persona
+puede estimar con confianza. Las horas corresponden a un desarrollador con experiencia en React
+Native y Supabase, e incluyen escribir el código, probarlo y ajustarlo tras la revisión. Las
+pantallas de la Fase 0 ya existen con datos de ejemplo, por eso las subtareas hablan de
+"conectar" y no de construir desde cero. Con dedicación completa (40 horas por semana) son unas
+6 a 7 semanas de trabajo.
+
+### 1. Diseño de pantallas e identidad aplicada · 24 h
+
+| Subtarea | Horas |
+|---|---|
+| Bocetos de las cuatro pestañas y de los flujos de registro y chat | 6 |
+| Diseño visual: colores, tipografía y componentes (botones, tarjetas, campos) | 8 |
+| Ícono de la app, pantalla de carga e ícono adaptable de Android | 4 |
+| Modo oscuro, tamaños de letra y contraste | 3 |
+| Revisión con Conéctate y ajustes | 3 |
+
+### 2. Configuración de Supabase · 8 h
+
+| Subtarea | Horas |
+|---|---|
+| Crear los proyectos de prueba y de producción, y sus claves | 2 |
+| Revisar y aplicar el esquema de base de datos en ambos | 2 |
+| Almacenamiento de fotos y sus permisos | 2 |
+| Datos de prueba y respaldos automáticos | 2 |
+
+### 3. Registro, inicio de sesión, perfil y aprobación · 24 h
+
+| Subtarea | Horas |
+|---|---|
+| Pantalla de acceso con código o enlace por correo | 6 |
+| Manejo de la sesión y bloqueo de pantallas para quien no ha entrado | 4 |
+| Formulario de alta de perfil con foto | 6 |
+| Pantalla "tu solicitud está en revisión" | 2 |
+| Editar perfil y elegir si aparecer en el directorio | 4 |
+| Pruebas de permisos (un miembro no aprobado no ve nada) | 2 |
+
+### 4. Directorio · 20 h
+
+| Subtarea | Horas |
+|---|---|
+| Lista conectada a la base de datos, con carga por partes | 5 |
+| Búsqueda y filtros por categoría y ciudad | 5 |
+| Ficha de detalle de cada miembro | 4 |
+| Botones "Escribir por WhatsApp" e "Iniciar chat" | 2 |
+| Subida y compresión de fotos | 2 |
+| Mensajes para listas vacías y errores de conexión | 2 |
+
+### 5. Chat en tiempo real · 40 h
+
+| Subtarea | Horas |
+|---|---|
+| Lista de conversaciones con último mensaje y contador de no leídos | 8 |
+| Pantalla de conversación con historial que carga al desplazarse | 8 |
+| Envío y recepción instantánea de mensajes | 8 |
+| Crear chats 1:1 desde el directorio, y grupos con sus participantes | 6 |
+| Marcas de leído y no leído | 4 |
+| Funcionamiento con mala conexión: mensajes pendientes y reintentos | 4 |
+| Pruebas con varios usuarios a la vez | 2 |
+
+### 6. Notificaciones push · 12 h
+
+| Subtarea | Horas |
+|---|---|
+| Pedir permiso y registrar cada teléfono | 3 |
+| Función del servidor que envía las notificaciones | 4 |
+| Avisos de mensaje nuevo y de noticia publicada | 3 |
+| Abrir la pantalla correcta al tocar el aviso | 2 |
+
+### 7. Home de noticias y comentarios · 16 h
+
+| Subtarea | Horas |
+|---|---|
+| Lista de noticias conectada, con carga por partes | 4 |
+| Pantalla del artículo con formato (títulos, listas, imágenes) | 4 |
+| Comentarios: ver, escribir y borrar los propios, en vivo | 5 |
+| Botón para compartir una noticia fuera de la app | 2 |
+| Actualizar al deslizar hacia abajo y estados vacíos | 1 |
+
+### 8. Agente de noticias · 16 h
+
+| Subtarea | Horas |
+|---|---|
+| Ajustar las instrucciones y el tono con ejemplos reales de Conéctate | 4 |
+| Darle contexto: eventos, miembros nuevos y novedades de la semana | 4 |
+| Programarlo a diario y cada semana | 2 |
+| Manejo de errores y aviso al equipo si falla | 2 |
+| Revisión del editor: leer el borrador, corregirlo y publicarlo | 4 |
+
+### 9. Formularios y estadísticas · 20 h
+
+| Subtarea | Horas |
+|---|---|
+| Formularios que se arman solos a partir de las preguntas guardadas (texto, una opción, varias) | 6 |
+| Validación y envío de respuestas | 3 |
+| Pantalla de estadísticas con gráficos | 7 |
+| Exportar respuestas a Excel o CSV para los administradores | 4 |
+
+### 10. Moderación y borrado de cuenta · 16 h
+
+| Subtarea | Horas |
+|---|---|
+| Reportar un mensaje, comentario o perfil | 5 |
+| Bloquear a un usuario (deja de ver sus mensajes y comentarios) | 4 |
+| Lista de reportes para que los administradores decidan | 3 |
+| Borrar la cuenta desde la app y desde una página web, con limpieza de datos | 4 |
+
+### 11. Pantallas de administración · 16 h
+
+| Subtarea | Horas |
+|---|---|
+| Aprobar o rechazar solicitudes de miembros | 4 |
+| Asignar roles de editor y administrador | 2 |
+| Crear, editar y publicar noticias manualmente | 6 |
+| Crear, activar y cerrar formularios | 4 |
+
+### 12. Pruebas y corrección de errores · 24 h
+
+| Subtarea | Horas |
+|---|---|
+| Plan de pruebas con los casos principales | 3 |
+| Pruebas en iPhone y Android de distintos tamaños | 8 |
+| Pruebas de seguridad: que nadie vea datos que no le corresponden | 4 |
+| Corrección de los errores encontrados | 9 |
+
+### 13. Coordinación y entregas · 16 h
+
+| Subtarea | Horas |
+|---|---|
+| Reunión de arranque y definición de detalles | 3 |
+| Demostraciones semanales de avance (6 semanas) | 9 |
+| Documentación y entrega final | 4 |
