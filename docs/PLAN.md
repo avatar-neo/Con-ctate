@@ -163,44 +163,44 @@ servicios de la sección anterior, que se pagan directamente a cada proveedor.
 
 ### Desarrollo del MVP
 
-| # | Tarea | Horas | Precio (USD) | Precio por hora (USD) |
-|---|---|---|---|---|
-| 1 | Diseño de pantallas e identidad aplicada (colores, ícono, pantalla de inicio) | 24 | 720 | 30 |
-| 2 | Configuración de Supabase, entornos de prueba y producción | 8 | 240 | 30 |
-| 3 | Registro, inicio de sesión, perfil y aprobación de miembros | 24 | 720 | 30 |
-| 4 | Directorio con búsqueda, filtros, foto de perfil y botón de WhatsApp | 20 | 600 | 30 |
-| 5 | Chat 1:1 y grupos en tiempo real, con leído/no leído | 40 | 1.200 | 30 |
-| 6 | Notificaciones push | 12 | 360 | 30 |
-| 7 | Home de noticias con comentarios | 16 | 480 | 30 |
-| 8 | Agente de noticias: programación diaria/semanal y flujo de revisión del editor | 16 | 480 | 30 |
-| 9 | Formularios y pantalla de estadísticas | 20 | 600 | 30 |
-| 10 | Moderación y borrado de cuenta (requisitos de las tiendas) | 16 | 480 | 30 |
-| 11 | Pantallas de administración: aprobar miembros, publicar noticias, crear formularios | 16 | 480 | 30 |
-| 12 | Pruebas en iPhone y Android y corrección de errores | 24 | 720 | 30 |
-| 13 | Coordinación, reuniones y entregas | 16 | 480 | 30 |
-| | **Subtotal desarrollo** | **252** | **7.560** | |
+| # | Tarea | Horas | Precio (USD) |
+|---|---|---|---|
+| 1 | Diseño de pantallas e identidad aplicada (colores, ícono, pantalla de inicio) | 24 | 720 |
+| 2 | Configuración de Supabase, entornos de prueba y producción | 8 | 240 |
+| 3 | Registro, inicio de sesión, perfil y aprobación de miembros | 24 | 720 |
+| 4 | Directorio con búsqueda, filtros, foto de perfil y botón de WhatsApp | 20 | 600 |
+| 5 | Chat 1:1 y grupos en tiempo real, con leído/no leído | 40 | 1.200 |
+| 6 | Notificaciones push | 12 | 360 |
+| 7 | Home de noticias con comentarios | 16 | 480 |
+| 8 | Agente de noticias: programación diaria/semanal y flujo de revisión del editor | 16 | 480 |
+| 9 | Formularios y pantalla de estadísticas | 20 | 600 |
+| 10 | Moderación y borrado de cuenta (requisitos de las tiendas) | 16 | 480 |
+| 11 | Pantallas de administración: aprobar miembros, publicar noticias, crear formularios | 16 | 480 |
+| 12 | Pruebas en iPhone y Android y corrección de errores | 24 | 720 |
+| 13 | Coordinación, reuniones y entregas | 16 | 480 |
+| | **Subtotal desarrollo** | **252** | **7.560** |
 
 El detalle de cada tarea está en el [anexo de horas](#anexo-detalle-de-las-horas-de-desarrollo).
 
 ### Instalación y publicación
 
-| # | Tarea | Horas | Precio (USD) | Precio por hora (USD) |
-|---|---|---|---|---|
-| 14 | Acompañamiento para abrir las cuentas de Apple y Google (incluido D-U-N-S) | 4 | 120 | 30 |
-| 15 | Configuración de EAS, certificados, claves de notificaciones y producción en Supabase | 8 | 240 | 30 |
-| 16 | Fichas de tienda: textos, capturas, política de privacidad y cuestionarios | 10 | 300 | 30 |
-| 17 | Piloto en TestFlight y prueba cerrada de Google Play, envío a revisión y atención de rechazos | 10 | 300 | 30 |
-| | **Subtotal instalación** | **32** | **960** | |
+| # | Tarea | Horas | Precio (USD) |
+|---|---|---|---|
+| 14 | Acompañamiento para abrir las cuentas de Apple y Google (incluido D-U-N-S) | 4 | 120 |
+| 15 | Configuración de EAS, certificados, claves de notificaciones y producción en Supabase | 8 | 240 |
+| 16 | Fichas de tienda: textos, capturas, política de privacidad y cuestionarios | 10 | 300 |
+| 17 | Piloto en TestFlight y prueba cerrada de Google Play, envío a revisión y atención de rechazos | 10 | 300 |
+| | **Subtotal instalación** | **32** | **960** |
 
 **Total del proyecto: 284 horas, USD 8.520.** Conviene reservar un 15 % adicional (unos USD
 1.300) para cambios que salgan del piloto.
 
 ### Soporte mensual
 
-| Plan | Incluye | Horas al mes | Precio mensual (USD) | Precio por hora (USD) |
-|---|---|---|---|---|
-| Básico | Corrección de errores, monitoreo, actualizaciones de Expo y de requisitos de las tiendas | 8 | 240 | 30 |
-| Estándar | Lo anterior, más ajustes del agente de noticias y mejoras pequeñas | 16 | 480 | 30 |
+| Plan | Incluye | Horas al mes | Precio mensual (USD) |
+|---|---|---|---|
+| Básico | Corrección de errores, monitoreo, actualizaciones de Expo y de requisitos de las tiendas | 8 | 240 |
+| Estándar | Lo anterior, más ajustes del agente de noticias y mejoras pequeñas | 16 | 480 |
 
 Las horas que excedan el plan se facturan a la tarifa por hora. Las funciones nuevas de las
 Fases 2 y 3 se cotizan aparte.
@@ -226,126 +226,126 @@ pantallas de la Fase 0 ya existen con datos de ejemplo, por eso las subtareas ha
 
 ### 1. Diseño de pantallas e identidad aplicada · 24 h
 
-| Subtarea | Horas | Precio por hora (USD) |
-|---|---|---|
-| Bocetos de las cuatro pestañas y de los flujos de registro y chat | 6 | 30 |
-| Diseño visual: colores, tipografía y componentes (botones, tarjetas, campos) | 8 | 30 |
-| Ícono de la app, pantalla de carga e ícono adaptable de Android | 4 | 30 |
-| Modo oscuro, tamaños de letra y contraste | 3 | 30 |
-| Revisión con Conéctate y ajustes | 3 | 30 |
+| Subtarea | Horas |
+|---|---|
+| Bocetos de las cuatro pestañas y de los flujos de registro y chat | 6 |
+| Diseño visual: colores, tipografía y componentes (botones, tarjetas, campos) | 8 |
+| Ícono de la app, pantalla de carga e ícono adaptable de Android | 4 |
+| Modo oscuro, tamaños de letra y contraste | 3 |
+| Revisión con Conéctate y ajustes | 3 |
 
 ### 2. Configuración de Supabase · 8 h
 
-| Subtarea | Horas | Precio por hora (USD) |
-|---|---|---|
-| Crear los proyectos de prueba y de producción, y sus claves | 2 | 30 |
-| Revisar y aplicar el esquema de base de datos en ambos | 2 | 30 |
-| Almacenamiento de fotos y sus permisos | 2 | 30 |
-| Datos de prueba y respaldos automáticos | 2 | 30 |
+| Subtarea | Horas |
+|---|---|
+| Crear los proyectos de prueba y de producción, y sus claves | 2 |
+| Revisar y aplicar el esquema de base de datos en ambos | 2 |
+| Almacenamiento de fotos y sus permisos | 2 |
+| Datos de prueba y respaldos automáticos | 2 |
 
 ### 3. Registro, inicio de sesión, perfil y aprobación · 24 h
 
-| Subtarea | Horas | Precio por hora (USD) |
-|---|---|---|
-| Pantalla de acceso con código o enlace por correo | 6 | 30 |
-| Manejo de la sesión y bloqueo de pantallas para quien no ha entrado | 4 | 30 |
-| Formulario de alta de perfil con foto | 6 | 30 |
-| Pantalla "tu solicitud está en revisión" | 2 | 30 |
-| Editar perfil y elegir si aparecer en el directorio | 4 | 30 |
-| Pruebas de permisos (un miembro no aprobado no ve nada) | 2 | 30 |
+| Subtarea | Horas |
+|---|---|
+| Pantalla de acceso con código o enlace por correo | 6 |
+| Manejo de la sesión y bloqueo de pantallas para quien no ha entrado | 4 |
+| Formulario de alta de perfil con foto | 6 |
+| Pantalla "tu solicitud está en revisión" | 2 |
+| Editar perfil y elegir si aparecer en el directorio | 4 |
+| Pruebas de permisos (un miembro no aprobado no ve nada) | 2 |
 
 ### 4. Directorio · 20 h
 
-| Subtarea | Horas | Precio por hora (USD) |
-|---|---|---|
-| Lista conectada a la base de datos, con carga por partes | 5 | 30 |
-| Búsqueda y filtros por categoría y ciudad | 5 | 30 |
-| Ficha de detalle de cada miembro | 4 | 30 |
-| Botones "Escribir por WhatsApp" e "Iniciar chat" | 2 | 30 |
-| Subida y compresión de fotos | 2 | 30 |
-| Mensajes para listas vacías y errores de conexión | 2 | 30 |
+| Subtarea | Horas |
+|---|---|
+| Lista conectada a la base de datos, con carga por partes | 5 |
+| Búsqueda y filtros por categoría y ciudad | 5 |
+| Ficha de detalle de cada miembro | 4 |
+| Botones "Escribir por WhatsApp" e "Iniciar chat" | 2 |
+| Subida y compresión de fotos | 2 |
+| Mensajes para listas vacías y errores de conexión | 2 |
 
 ### 5. Chat en tiempo real · 40 h
 
-| Subtarea | Horas | Precio por hora (USD) |
-|---|---|---|
-| Lista de conversaciones con último mensaje y contador de no leídos | 8 | 30 |
-| Pantalla de conversación con historial que carga al desplazarse | 8 | 30 |
-| Envío y recepción instantánea de mensajes | 8 | 30 |
-| Crear chats 1:1 desde el directorio, y grupos con sus participantes | 6 | 30 |
-| Marcas de leído y no leído | 4 | 30 |
-| Funcionamiento con mala conexión: mensajes pendientes y reintentos | 4 | 30 |
-| Pruebas con varios usuarios a la vez | 2 | 30 |
+| Subtarea | Horas |
+|---|---|
+| Lista de conversaciones con último mensaje y contador de no leídos | 8 |
+| Pantalla de conversación con historial que carga al desplazarse | 8 |
+| Envío y recepción instantánea de mensajes | 8 |
+| Crear chats 1:1 desde el directorio, y grupos con sus participantes | 6 |
+| Marcas de leído y no leído | 4 |
+| Funcionamiento con mala conexión: mensajes pendientes y reintentos | 4 |
+| Pruebas con varios usuarios a la vez | 2 |
 
 ### 6. Notificaciones push · 12 h
 
-| Subtarea | Horas | Precio por hora (USD) |
-|---|---|---|
-| Pedir permiso y registrar cada teléfono | 3 | 30 |
-| Función del servidor que envía las notificaciones | 4 | 30 |
-| Avisos de mensaje nuevo y de noticia publicada | 3 | 30 |
-| Abrir la pantalla correcta al tocar el aviso | 2 | 30 |
+| Subtarea | Horas |
+|---|---|
+| Pedir permiso y registrar cada teléfono | 3 |
+| Función del servidor que envía las notificaciones | 4 |
+| Avisos de mensaje nuevo y de noticia publicada | 3 |
+| Abrir la pantalla correcta al tocar el aviso | 2 |
 
 ### 7. Home de noticias y comentarios · 16 h
 
-| Subtarea | Horas | Precio por hora (USD) |
-|---|---|---|
-| Lista de noticias conectada, con carga por partes | 4 | 30 |
-| Pantalla del artículo con formato (títulos, listas, imágenes) | 4 | 30 |
-| Comentarios: ver, escribir y borrar los propios, en vivo | 5 | 30 |
-| Botón para compartir una noticia fuera de la app | 2 | 30 |
-| Actualizar al deslizar hacia abajo y estados vacíos | 1 | 30 |
+| Subtarea | Horas |
+|---|---|
+| Lista de noticias conectada, con carga por partes | 4 |
+| Pantalla del artículo con formato (títulos, listas, imágenes) | 4 |
+| Comentarios: ver, escribir y borrar los propios, en vivo | 5 |
+| Botón para compartir una noticia fuera de la app | 2 |
+| Actualizar al deslizar hacia abajo y estados vacíos | 1 |
 
 ### 8. Agente de noticias · 16 h
 
-| Subtarea | Horas | Precio por hora (USD) |
-|---|---|---|
-| Ajustar las instrucciones y el tono con ejemplos reales de Conéctate | 4 | 30 |
-| Darle contexto: eventos, miembros nuevos y novedades de la semana | 4 | 30 |
-| Programarlo a diario y cada semana | 2 | 30 |
-| Manejo de errores y aviso al equipo si falla | 2 | 30 |
-| Revisión del editor: leer el borrador, corregirlo y publicarlo | 4 | 30 |
+| Subtarea | Horas |
+|---|---|
+| Ajustar las instrucciones y el tono con ejemplos reales de Conéctate | 4 |
+| Darle contexto: eventos, miembros nuevos y novedades de la semana | 4 |
+| Programarlo a diario y cada semana | 2 |
+| Manejo de errores y aviso al equipo si falla | 2 |
+| Revisión del editor: leer el borrador, corregirlo y publicarlo | 4 |
 
 ### 9. Formularios y estadísticas · 20 h
 
-| Subtarea | Horas | Precio por hora (USD) |
-|---|---|---|
-| Formularios que se arman solos a partir de las preguntas guardadas (texto, una opción, varias) | 6 | 30 |
-| Validación y envío de respuestas | 3 | 30 |
-| Pantalla de estadísticas con gráficos | 7 | 30 |
-| Exportar respuestas a Excel o CSV para los administradores | 4 | 30 |
+| Subtarea | Horas |
+|---|---|
+| Formularios que se arman solos a partir de las preguntas guardadas (texto, una opción, varias) | 6 |
+| Validación y envío de respuestas | 3 |
+| Pantalla de estadísticas con gráficos | 7 |
+| Exportar respuestas a Excel o CSV para los administradores | 4 |
 
 ### 10. Moderación y borrado de cuenta · 16 h
 
-| Subtarea | Horas | Precio por hora (USD) |
-|---|---|---|
-| Reportar un mensaje, comentario o perfil | 5 | 30 |
-| Bloquear a un usuario (deja de ver sus mensajes y comentarios) | 4 | 30 |
-| Lista de reportes para que los administradores decidan | 3 | 30 |
-| Borrar la cuenta desde la app y desde una página web, con limpieza de datos | 4 | 30 |
+| Subtarea | Horas |
+|---|---|
+| Reportar un mensaje, comentario o perfil | 5 |
+| Bloquear a un usuario (deja de ver sus mensajes y comentarios) | 4 |
+| Lista de reportes para que los administradores decidan | 3 |
+| Borrar la cuenta desde la app y desde una página web, con limpieza de datos | 4 |
 
 ### 11. Pantallas de administración · 16 h
 
-| Subtarea | Horas | Precio por hora (USD) |
-|---|---|---|
-| Aprobar o rechazar solicitudes de miembros | 4 | 30 |
-| Asignar roles de editor y administrador | 2 | 30 |
-| Crear, editar y publicar noticias manualmente | 6 | 30 |
-| Crear, activar y cerrar formularios | 4 | 30 |
+| Subtarea | Horas |
+|---|---|
+| Aprobar o rechazar solicitudes de miembros | 4 |
+| Asignar roles de editor y administrador | 2 |
+| Crear, editar y publicar noticias manualmente | 6 |
+| Crear, activar y cerrar formularios | 4 |
 
 ### 12. Pruebas y corrección de errores · 24 h
 
-| Subtarea | Horas | Precio por hora (USD) |
-|---|---|---|
-| Plan de pruebas con los casos principales | 3 | 30 |
-| Pruebas en iPhone y Android de distintos tamaños | 8 | 30 |
-| Pruebas de seguridad: que nadie vea datos que no le corresponden | 4 | 30 |
-| Corrección de los errores encontrados | 9 | 30 |
+| Subtarea | Horas |
+|---|---|
+| Plan de pruebas con los casos principales | 3 |
+| Pruebas en iPhone y Android de distintos tamaños | 8 |
+| Pruebas de seguridad: que nadie vea datos que no le corresponden | 4 |
+| Corrección de los errores encontrados | 9 |
 
 ### 13. Coordinación y entregas · 16 h
 
-| Subtarea | Horas | Precio por hora (USD) |
-|---|---|---|
-| Reunión de arranque y definición de detalles | 3 | 30 |
-| Demostraciones semanales de avance (6 semanas) | 9 | 30 |
-| Documentación y entrega final | 4 | 30 |
+| Subtarea | Horas |
+|---|---|
+| Reunión de arranque y definición de detalles | 3 |
+| Demostraciones semanales de avance (6 semanas) | 9 |
+| Documentación y entrega final | 4 |
