@@ -461,7 +461,7 @@ cero.
 | Subtarea | Sin Claude Code | Con Claude Code |
 |---|---|---|
 | Reunión de arranque y definición de detalles | 3 | 3 |
-| Demostraciones semanales de avance (6 semanas) | 9 | 6 |
+| Demostraciones semanales de avance | 9 | 6 |
 | Documentación y entrega final | 4 | 2 |
 
 ### 14. Acceso por suscripción · 9 h con Claude Code (16 h sin Claude Code)
