@@ -243,6 +243,63 @@ el 10 % de los ingresos por suscripciones, que se liquida aparte.
   (19 más margen).
 - No incluye la reserva del 15 % para cambios que salgan del piloto.
 
+### Escenario con Claude Code
+
+Si el desarrollador trabaja con **Claude Code** (el asistente de programación de Anthropic), Claude
+escribe la mayor parte del código y la persona dirige, revisa, prueba en teléfonos reales y
+decide. Las horas de abajo son las de esa persona, que es lo que se factura.
+
+**Cómo se estimó.** El ahorro no es parejo. Las capas que son sobre todo código (pantallas,
+base de datos, funciones del servidor, permisos) bajan entre 60 y 80 %. La Fase 0 de este mismo
+proyecto (cuatro pantallas, esquema con permisos y el agente de noticias) se hizo así en una
+sesión de trabajo. Lo que depende de personas o de terceros baja poco o nada: pruebas en
+teléfonos reales, revisiones con Angélica, reuniones, cuentas de tienda y la revisión de Apple y
+Google. Es una estimación por subtarea, no una medición, y el detalle está en la columna "Con
+Claude Code" del anexo.
+
+| # | Tarea | Horas tradicional | Horas con Claude Code | Precio con Claude Code (USD) |
+|---|---|---|---|---|
+| 1 | Diseño de pantallas e identidad aplicada | 24 | 14 | 420 |
+| 2 | Configuración de Supabase | 8 | 4 | 120 |
+| 3 | Registro, inicio de sesión, perfil y aprobación | 24 | 7,5 | 225 |
+| 4 | Directorio | 20 | 6 | 180 |
+| 5 | Chat en tiempo real | 40 | 14 | 420 |
+| 6 | Notificaciones push | 12 | 4,5 | 135 |
+| 7 | Home de noticias y comentarios | 16 | 5 | 150 |
+| 8 | Agente de noticias | 18 | 8,5 | 255 |
+| 9 | Formularios y estadísticas | 20 | 6 | 180 |
+| 10 | Moderación y borrado de cuenta | 16 | 5 | 150 |
+| 11 | Pantallas de administración | 16 | 4,5 | 135 |
+| 12 | Pruebas y corrección de errores | 24 | 15 | 450 |
+| 13 | Coordinación y entregas | 16 | 11 | 330 |
+| 14 | Acceso por suscripción | 16 | 9 | 270 |
+| | **Subtotal desarrollo** | **270** | **114** | **3.420** |
+| 15 | Acompañamiento para abrir las cuentas de Apple y Google | 4 | 4 | 120 |
+| 16 | Configuración de EAS, certificados y producción | 8 | 5 | 150 |
+| 17 | Fichas de tienda y política de privacidad (Claude redacta los borradores) | 10 | 6 | 180 |
+| 18 | Piloto, envío a revisión y atención de rechazos | 10 | 8 | 240 |
+| | **Subtotal instalación** | **32** | **23** | **690** |
+| | **Total** | **302** | **137** | **4.110** |
+
+**Resumen del escenario con Claude Code**
+
+| Concepto | Tradicional (USD) | Con Claude Code (USD) |
+|---|---|---|
+| Desarrollo e instalación | 9.060 | 4.110 |
+| Plataformas iniciales con margen (Apple + Google) | 155 | 155 |
+| Suscripción a Claude Max durante el desarrollo (1 mes) | — | 100 |
+| **Total pago inicial** | **9.215** | **4.365** |
+| Mensualidad sugerida | 283,75 | 283,75 |
+| Duración a tiempo completo | unas 7 semanas | unas 3 a 4 semanas |
+
+- La suscripción a Claude Max cuesta desde USD 100 al mes (precio consultado hoy en claude.com).
+  Con el plan Pro (USD 20) también se puede, pero con límites de uso que alargarían el trabajo.
+- La mensualidad no cambia: el soporte ya está calculado en pocas horas, y la mayor parte se va
+  en revisar y probar, no en escribir código.
+- Para que el ahorro se cumpla, el desarrollador necesita experiencia revisando código. Claude
+  Code acelera la escritura, pero alguien tiene que entender lo que se entrega y probarlo en
+  teléfonos reales.
+
 ## Decisiones tomadas
 
 Definidas por Cristian el 15 de octubre de 2026.
@@ -277,139 +334,143 @@ pantallas de la Fase 0 ya existen con datos de ejemplo, por eso las subtareas ha
 "conectar" y no de construir desde cero. Con dedicación completa (40 horas por semana) son unas
 7 semanas de trabajo.
 
-### 1. Diseño de pantallas e identidad aplicada · 24 h
+La columna **Con Claude Code** da las horas de la persona si el desarrollo se hace con Claude
+Code: Claude escribe el código y la persona lo dirige, revisa y prueba. Los totales están en el
+escenario con Claude Code de la Cotización.
 
-| Subtarea | Horas |
-|---|---|
-| Bocetos de las cuatro pestañas y de los flujos de registro y chat | 6 |
-| Diseño visual: colores, tipografía y componentes (botones, tarjetas, campos) | 8 |
-| Ícono de la app, pantalla de carga e ícono adaptable de Android | 4 |
-| Modo oscuro, tamaños de letra y contraste | 3 |
-| Revisión con Conéctate y ajustes | 3 |
+### 1. Diseño de pantallas e identidad aplicada · 24 h (14 h con Claude Code)
 
-### 2. Configuración de Supabase · 8 h
+| Subtarea | Horas | Con Claude Code |
+|---|---|---|
+| Bocetos de las cuatro pestañas y de los flujos de registro y chat | 6 | 3 |
+| Diseño visual: colores, tipografía y componentes (botones, tarjetas, campos) | 8 | 4 |
+| Ícono de la app, pantalla de carga e ícono adaptable de Android | 4 | 3 |
+| Modo oscuro, tamaños de letra y contraste | 3 | 1 |
+| Revisión con Conéctate y ajustes | 3 | 3 |
 
-| Subtarea | Horas |
-|---|---|
-| Crear los proyectos de prueba y de producción, y sus claves | 2 |
-| Revisar y aplicar el esquema de base de datos en ambos | 2 |
-| Almacenamiento de fotos y sus permisos | 2 |
-| Datos de prueba y respaldos automáticos | 2 |
+### 2. Configuración de Supabase · 8 h (4 h con Claude Code)
 
-### 3. Registro, inicio de sesión, perfil y aprobación · 24 h
+| Subtarea | Horas | Con Claude Code |
+|---|---|---|
+| Crear los proyectos de prueba y de producción, y sus claves | 2 | 1 |
+| Revisar y aplicar el esquema de base de datos en ambos | 2 | 1 |
+| Almacenamiento de fotos y sus permisos | 2 | 1 |
+| Datos de prueba y respaldos automáticos | 2 | 1 |
 
-| Subtarea | Horas |
-|---|---|
-| Pantalla de acceso con código o enlace por correo | 6 |
-| Manejo de la sesión y bloqueo de pantallas para quien no ha entrado | 4 |
-| Formulario de alta de perfil con foto | 6 |
-| Pantalla "tu solicitud está en revisión" | 2 |
-| Editar perfil y elegir si aparecer en el directorio | 4 |
-| Pruebas de permisos (un miembro no aprobado no ve nada) | 2 |
+### 3. Registro, inicio de sesión, perfil y aprobación · 24 h (7,5 h con Claude Code)
 
-### 4. Directorio · 20 h
+| Subtarea | Horas | Con Claude Code |
+|---|---|---|
+| Pantalla de acceso con código o enlace por correo | 6 | 2 |
+| Manejo de la sesión y bloqueo de pantallas para quien no ha entrado | 4 | 1 |
+| Formulario de alta de perfil con foto | 6 | 2 |
+| Pantalla "tu solicitud está en revisión" | 2 | 0,5 |
+| Editar perfil y elegir si aparecer en el directorio | 4 | 1 |
+| Pruebas de permisos (un miembro no aprobado no ve nada) | 2 | 1 |
 
-| Subtarea | Horas |
-|---|---|
-| Lista conectada a la base de datos, con carga por partes | 5 |
-| Búsqueda y filtros por categoría y ciudad | 5 |
-| Ficha de detalle de cada miembro | 4 |
-| Botones "Escribir por WhatsApp" e "Iniciar chat" | 2 |
-| Subida y compresión de fotos | 2 |
-| Mensajes para listas vacías y errores de conexión | 2 |
+### 4. Directorio · 20 h (6 h con Claude Code)
 
-### 5. Chat en tiempo real · 40 h
+| Subtarea | Horas | Con Claude Code |
+|---|---|---|
+| Lista conectada a la base de datos, con carga por partes | 5 | 1,5 |
+| Búsqueda y filtros por categoría y ciudad | 5 | 1,5 |
+| Ficha de detalle de cada miembro | 4 | 1 |
+| Botones "Escribir por WhatsApp" e "Iniciar chat" | 2 | 0,5 |
+| Subida y compresión de fotos | 2 | 1 |
+| Mensajes para listas vacías y errores de conexión | 2 | 0,5 |
 
-| Subtarea | Horas |
-|---|---|
-| Lista de conversaciones con último mensaje y contador de no leídos | 8 |
-| Pantalla de conversación con historial que carga al desplazarse | 8 |
-| Envío y recepción instantánea de mensajes | 8 |
-| Crear chats 1:1 desde el directorio, y grupos con sus participantes | 6 |
-| Marcas de leído y no leído | 4 |
-| Funcionamiento con mala conexión: mensajes pendientes y reintentos | 4 |
-| Pruebas con varios usuarios a la vez | 2 |
+### 5. Chat en tiempo real · 40 h (14 h con Claude Code)
 
-### 6. Notificaciones push · 12 h
+| Subtarea | Horas | Con Claude Code |
+|---|---|---|
+| Lista de conversaciones con último mensaje y contador de no leídos | 8 | 2 |
+| Pantalla de conversación con historial que carga al desplazarse | 8 | 2 |
+| Envío y recepción instantánea de mensajes | 8 | 3 |
+| Crear chats 1:1 desde el directorio, y grupos con sus participantes | 6 | 2 |
+| Marcas de leído y no leído | 4 | 1 |
+| Funcionamiento con mala conexión: mensajes pendientes y reintentos | 4 | 2 |
+| Pruebas con varios usuarios a la vez | 2 | 2 |
 
-| Subtarea | Horas |
-|---|---|
-| Pedir permiso y registrar cada teléfono | 3 |
-| Función del servidor que envía las notificaciones | 4 |
-| Avisos de mensaje nuevo y de noticia publicada | 3 |
-| Abrir la pantalla correcta al tocar el aviso | 2 |
+### 6. Notificaciones push · 12 h (4,5 h con Claude Code)
 
-### 7. Home de noticias y comentarios · 16 h
+| Subtarea | Horas | Con Claude Code |
+|---|---|---|
+| Pedir permiso y registrar cada teléfono | 3 | 1 |
+| Función del servidor que envía las notificaciones | 4 | 1,5 |
+| Avisos de mensaje nuevo y de noticia publicada | 3 | 1 |
+| Abrir la pantalla correcta al tocar el aviso | 2 | 1 |
 
-| Subtarea | Horas |
-|---|---|
-| Lista de noticias conectada, con carga por partes | 4 |
-| Pantalla del artículo con formato (títulos, listas, imágenes) | 4 |
-| Comentarios: ver, escribir y borrar los propios, en vivo | 5 |
-| Botón para compartir una noticia fuera de la app | 2 |
-| Actualizar al deslizar hacia abajo y estados vacíos | 1 |
+### 7. Home de noticias y comentarios · 16 h (5 h con Claude Code)
 
-### 8. Agente de noticias · 18 h
+| Subtarea | Horas | Con Claude Code |
+|---|---|---|
+| Lista de noticias conectada, con carga por partes | 4 | 1 |
+| Pantalla del artículo con formato (títulos, listas, imágenes) | 4 | 1,5 |
+| Comentarios: ver, escribir y borrar los propios, en vivo | 5 | 1,5 |
+| Botón para compartir una noticia fuera de la app | 2 | 0,5 |
+| Actualizar al deslizar hacia abajo y estados vacíos | 1 | 0,5 |
 
-| Subtarea | Horas |
-|---|---|
-| Ajustar las instrucciones y el tono con ejemplos reales de Conéctate | 4 |
-| Darle contexto: eventos, miembros nuevos y noticias del sector | 4 |
-| Espacio para que Angélica proponga temas y fuentes al agente | 2 |
-| Programarlo a diario y cada semana | 2 |
-| Manejo de errores y aviso al equipo si falla | 2 |
-| Revisión de Angélica: leer el borrador, corregirlo y publicarlo | 4 |
+### 8. Agente de noticias · 18 h (8,5 h con Claude Code)
 
-### 9. Formularios y estadísticas · 20 h
+| Subtarea | Horas | Con Claude Code |
+|---|---|---|
+| Ajustar las instrucciones y el tono con ejemplos reales de Conéctate | 4 | 3 |
+| Darle contexto: eventos, miembros nuevos y noticias del sector | 4 | 2 |
+| Espacio para que Angélica proponga temas y fuentes al agente | 2 | 0,5 |
+| Programarlo a diario y cada semana | 2 | 0,5 |
+| Manejo de errores y aviso al equipo si falla | 2 | 1 |
+| Revisión de Angélica: leer el borrador, corregirlo y publicarlo | 4 | 1,5 |
 
-| Subtarea | Horas |
-|---|---|
-| Formularios que se arman solos a partir de las preguntas guardadas (texto, una opción, varias) | 6 |
-| Validación y envío de respuestas | 3 |
-| Pantalla de estadísticas con gráficos | 7 |
-| Exportar respuestas a Excel o CSV para los administradores | 4 |
+### 9. Formularios y estadísticas · 20 h (6 h con Claude Code)
 
-### 10. Moderación y borrado de cuenta · 16 h
+| Subtarea | Horas | Con Claude Code |
+|---|---|---|
+| Formularios que se arman solos a partir de las preguntas guardadas (texto, una opción, varias) | 6 | 2 |
+| Validación y envío de respuestas | 3 | 1 |
+| Pantalla de estadísticas con gráficos | 7 | 2 |
+| Exportar respuestas a Excel o CSV para los administradores | 4 | 1 |
 
-| Subtarea | Horas |
-|---|---|
-| Reportar un mensaje, comentario o perfil | 5 |
-| Bloquear a un usuario (deja de ver sus mensajes y comentarios) | 4 |
-| Lista de reportes para que los administradores decidan | 3 |
-| Borrar la cuenta desde la app y desde una página web, con limpieza de datos | 4 |
+### 10. Moderación y borrado de cuenta · 16 h (5 h con Claude Code)
 
-### 11. Pantallas de administración · 16 h
+| Subtarea | Horas | Con Claude Code |
+|---|---|---|
+| Reportar un mensaje, comentario o perfil | 5 | 1,5 |
+| Bloquear a un usuario (deja de ver sus mensajes y comentarios) | 4 | 1 |
+| Lista de reportes para que los administradores decidan | 3 | 1 |
+| Borrar la cuenta desde la app y desde una página web, con limpieza de datos | 4 | 1,5 |
 
-| Subtarea | Horas |
-|---|---|
-| Aprobar o rechazar solicitudes de miembros | 4 |
-| Asignar roles de editor y administrador | 2 |
-| Crear, editar y publicar noticias manualmente | 6 |
-| Crear, activar y cerrar formularios | 4 |
+### 11. Pantallas de administración · 16 h (4,5 h con Claude Code)
 
-### 12. Pruebas y corrección de errores · 24 h
+| Subtarea | Horas | Con Claude Code |
+|---|---|---|
+| Aprobar o rechazar solicitudes de miembros | 4 | 1 |
+| Asignar roles de editor y administrador | 2 | 0,5 |
+| Crear, editar y publicar noticias manualmente | 6 | 2 |
+| Crear, activar y cerrar formularios | 4 | 1 |
 
-| Subtarea | Horas |
-|---|---|
-| Plan de pruebas con los casos principales | 3 |
-| Pruebas en iPhone y Android de distintos tamaños | 8 |
-| Pruebas de seguridad: que nadie vea datos que no le corresponden | 4 |
-| Corrección de los errores encontrados | 9 |
+### 12. Pruebas y corrección de errores · 24 h (15 h con Claude Code)
 
-### 13. Coordinación y entregas · 16 h
+| Subtarea | Horas | Con Claude Code |
+|---|---|---|
+| Plan de pruebas con los casos principales | 3 | 1 |
+| Pruebas en iPhone y Android de distintos tamaños | 8 | 8 |
+| Pruebas de seguridad: que nadie vea datos que no le corresponden | 4 | 2 |
+| Corrección de los errores encontrados | 9 | 4 |
 
-| Subtarea | Horas |
-|---|---|
-| Reunión de arranque y definición de detalles | 3 |
-| Demostraciones semanales de avance (6 semanas) | 9 |
-| Documentación y entrega final | 4 |
+### 13. Coordinación y entregas · 16 h (11 h con Claude Code)
 
-### 14. Acceso por suscripción · 16 h
+| Subtarea | Horas | Con Claude Code |
+|---|---|---|
+| Reunión de arranque y definición de detalles | 3 | 3 |
+| Demostraciones semanales de avance (6 semanas) | 9 | 6 |
+| Documentación y entrega final | 4 | 2 |
 
-| Subtarea | Horas |
-|---|---|
-| Revisar cómo cobra hoy el portal y acordar cómo avisa a la app (aviso automático o consulta) | 3 |
-| Función que recibe ese aviso y activa o vence la suscripción de cada miembro | 5 |
-| Bloquear el acceso sin suscripción activa, con una pantalla que no muestre precios ni enlaces de pago | 3 |
-| Pruebas de alta, renovación, vencimiento y cancelación | 3 |
-| Revisión de las reglas de pagos de Apple y Google antes de enviar a revisión | 2 |
+### 14. Acceso por suscripción · 16 h (9 h con Claude Code)
+
+| Subtarea | Horas | Con Claude Code |
+|---|---|---|
+| Revisar cómo cobra hoy el portal y acordar cómo avisa a la app (aviso automático o consulta) | 3 | 3 |
+| Función que recibe ese aviso y activa o vence la suscripción de cada miembro | 5 | 2 |
+| Bloquear el acceso sin suscripción activa, con una pantalla que no muestre precios ni enlaces de pago | 3 | 1 |
+| Pruebas de alta, renovación, vencimiento y cancelación | 3 | 2 |
+| Revisión de las reglas de pagos de Apple y Google antes de enviar a revisión | 2 | 1 |
